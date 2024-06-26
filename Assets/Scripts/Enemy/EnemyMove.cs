@@ -43,7 +43,7 @@ public class EnemyMove : MonoBehaviour
     void Update()
     {
         dir = player.transform.position - transform.position;
-
+        dir.Normalize();
         //플레이어의 방향을 찾고 이동한다.
         //움직임 P = p0 + vt
         // A 벡터 - B 벡터 = B에서 A를 바라보는 벡터 
