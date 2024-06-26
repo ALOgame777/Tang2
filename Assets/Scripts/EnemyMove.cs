@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -33,6 +34,7 @@ public class EnemyMove : MonoBehaviour
     void Start()
     {
         //등장 애니메이션 있으면 좋겠다
+        //공격 모션 필요한가?
         //보스 몹에만 넣을까?
         
     }
@@ -48,6 +50,18 @@ public class EnemyMove : MonoBehaviour
         // dir = A vector - B  vector
         
         transform.position += dir * enemySpeed * Time.deltaTime;
+
+
+
+
+        if (hp < 0) //체력이 0 이하로 떨어지면
+        {
+            //transform.position 자리에 ExpObject를 남기고
+            //사라져라. 죽음
+
+        }
+
+
 
     }
 }
