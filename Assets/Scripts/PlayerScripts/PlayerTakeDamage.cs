@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net;
+using UnityEditor.Playables;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,9 +20,9 @@ public class PlayerTakeDamage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
 
+    
     public void TakeDamage(float damage)
     {
         currentHealth -= damage;

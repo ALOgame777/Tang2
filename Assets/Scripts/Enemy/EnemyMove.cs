@@ -26,8 +26,8 @@ public class EnemyMove : MonoBehaviour
 
     public GameObject player;
 
-    int hp;
-    int expPoint;
+    public int hp = 30;
+    public int expPoint;
     
     
     // Start is called before the first frame update
@@ -54,14 +54,7 @@ public class EnemyMove : MonoBehaviour
 
 
 
-        if (hp < 0) //체력이 0 이하로 떨어지면
-        {
-            //transform.position 자리에 ExpObject를 남기고
-            //사라져라. 죽음
-
-        }
-
-
-
+        
     }
+    
 }

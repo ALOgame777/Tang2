@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 public class PlayerMove : MonoBehaviour
 {
     public float moveSpeed;
-    Vector2 inputVec;
+    public Vector2 inputVec;
     Rigidbody2D rb;
     SpriteRenderer sp;
     

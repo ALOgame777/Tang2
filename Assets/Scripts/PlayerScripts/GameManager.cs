@@ -12,13 +12,19 @@ using UnityEngine;
 
 //일정 플레이 시간이 지나면 보스 스폰
 
+
 public class GameManager : MonoBehaviour
 {
-
+    public static GameManager instance;
+    public PlayerMove player;
     int playerExp;
     int playerLv;
     string[] playerEqu;
 
+    private void Awake()
+    {
+        instance = this;
+    }
 
 
     // Start is called before the first frame update
