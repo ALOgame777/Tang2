@@ -21,15 +21,24 @@ using UnityEngine;
 
 public class EnemyMove : MonoBehaviour
 {
-    Vector3 dir = new Vector3(1, 1, 0);
+    //Vector3 dir = new Vector3(1, 1, 0);
     public float enemySpeed = 15.0f;
 
-    public GameObject player;
+    public Rigidbody2D target;
+
+    bool isLive;
+
+    Rigidbody2D rig;
+    SpriteRenderer sp;
 
     public int hp = 30;
     public int expPoint;
-    
-    
+
+    private void Awake()
+    {
+        rig = GetComponent<Rigidbody2D>();
+        sp = GetComponent<SpriteRenderer>();
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -42,19 +51,15 @@ public class EnemyMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        dir = player.transform.position - transform.position;
-        dir.Normalize();
-        //플레이어의 방향을 찾고 이동한다.
-        //움직임 P = p0 + vt
-        // A 벡터 - B 벡터 = B에서 A를 바라보는 벡터 
-        // dir = A vector - B  vector
-        
-        transform.position += dir * enemySpeed * Time.deltaTime;
-
-
-
-
-        
+          
     }
-    
+
+    void FixedUpdate()
+    {
+        Vector2 dirVec = target.position - rig.position;
+        Vector2 nextVec = dirVec.normalized * enemySpeed * Time.fixedDeltaTime;
+        rig.MovePosition(rig.position +  nextVec);
+        rig.velocity = Vector2.zero;
+    }
+
 }

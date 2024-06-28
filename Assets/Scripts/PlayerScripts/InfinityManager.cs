@@ -5,8 +5,7 @@ using UnityEngine;
 
 public class InfinityManager : MonoBehaviour
 {
-
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!collision.CompareTag("Area"))
             return;
@@ -23,7 +22,7 @@ public class InfinityManager : MonoBehaviour
         switch (transform.tag)
         {
             case "Ground":
-                if(diffX > diffY)
+                if (diffX > diffY)
                 {
                     transform.Translate(Vector3.right * dirX * 50);
                 }
