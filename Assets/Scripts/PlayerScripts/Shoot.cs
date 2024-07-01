@@ -28,7 +28,7 @@ public class Shoot : MonoBehaviour
     {
         if (this.bulletPref != null)
         {
-            if (this.bulletPref.GetComponent<Rigidbody>() != null)
+            if (this.bulletPref.GetComponent<Rigidbody2D>() != null)
             {
                 this.bulletPref.SetActive(true);
             }

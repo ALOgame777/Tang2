@@ -2,9 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Tilemaps;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class InfinityManager : MonoBehaviour
 {
+    public TilemapCollider2D center;
+
+    private void Start()
+    {
+        center.enabled = false;
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!collision.CompareTag("Area"))
