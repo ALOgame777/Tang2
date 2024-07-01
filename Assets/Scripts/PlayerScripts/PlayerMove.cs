@@ -26,7 +26,7 @@ public class PlayerMove : MonoBehaviour
     {
         if(inputVec.x != 0)
         {
-            sp.flipX = inputVec.x > 0;
+            sp.flipX = inputVec.x < 0;
         }
     }
 
